@@ -1,3 +1,6 @@
+from flask import Flask
+from useraddress import get_address
+
 from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
@@ -45,7 +48,6 @@ def user_address():
 		</p>
 		</form>
 		</body>
-
 </html>''', house_number=house_number, street_name=street_name, city=city, postcode=postcode, address=address)
 
 
