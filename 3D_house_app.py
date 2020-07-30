@@ -4,6 +4,7 @@ from flask import Flask
 from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
     
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -31,11 +32,25 @@ def index():
 
 	#Landing page with user address form
 	return '''
-	<html>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>3D house builder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
 	<body>
+	<div class="container">
+	 <img src="./house.svg" alt="house"> 
+	</div>
+	<div class="container-fluid">
+	<div class="jumbotron">
 	<h1>3D house builder</h1>
-	<p> This little app can build a 3D representation of any address in Flanders</p>
-	<h2>Please enter an address in Flanders</h2>
+	</div>
+	<div class="container-fluid">
+	<h4>This little app can build a 3D representation of any address in Flanders</h4>
+	<p>Enter address</p>
 	<form method='POST'>
 	<input type='number' name='house_number'/>
 	<input type='text' name='street_name'/>
@@ -44,8 +59,13 @@ def index():
 	<input type='submit' value='Submit'/>
 	</p>
 	</form>
+	</div>
 	</body>
 	</html>'''
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
+	
+# <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+#use for warnings <div class="alert alert-danger">

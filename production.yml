@@ -1,0 +1,9 @@
+#include changes in docker-compose.yal required for production
+
+#Removing any volume bindings for application code, so that code stays inside the container and can’t be changed from outside
+
+#Binding to different ports on the host
+
+#Setting environment variables differently, such as reducing the verbosity of logging
+
+#Specifying a restart policy like restart: always to avoid downtime

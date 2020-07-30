@@ -1,0 +1,5 @@
+#Add folders or file types to gitignore
+.env
+
+#To make update changes run
+#git config --global core.excludesfile ~/.gitignore_global
