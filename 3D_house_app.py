@@ -14,13 +14,14 @@ def index():
         postcode = request.form.get('postcode')
 
         #need to delete return
-        #return '''<h1>The house number is: {}</h1>
-         #   <h1>The street is: {}</h1>
-          #  <h1>The city is: {}</h1>
-           # <h1>The postcode is: {}</h1>
-            #'''.format(house_number, street_name, city, postcode)
+        return '''<h1>The house number is: {}</h1>
+		<h1>The street is: {}</h1>
+          	<h1>The city is: {}</h1>
+		<h1>The postcode is: {}</h1>
+            	'''.format(house_number, street_name, city, postcode)
         
         #try build 3D house function here
+        '''
         try:
             make_house()
             
@@ -31,6 +32,7 @@ def index():
             print("Please try again")
             
             exit()
+        '''
     #else return empty form variables
         #else:
          #   house_number = ''
